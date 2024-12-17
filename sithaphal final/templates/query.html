@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query the PDF</title>
+</head>
+<body>
+    <h1>Query the PDF</h1>
+    <form action="/query" method="post">
+        <textarea name="text" rows="10" cols="80" readonly>{{ text }}</textarea><br>
+        <label for="query">Your Question:</label>
+        <input type="text" name="query" id="query" required>
+        <button type="submit">Ask</button>
+    </form>
+    {% if query %}
+    <h2>Question:</h2>
+    <p>{{ query }}</p>
+    <h2>Answer:</h2>
+    <p>{{ answer }}</p>
+    {% endif %}
+</body>
+</html>
